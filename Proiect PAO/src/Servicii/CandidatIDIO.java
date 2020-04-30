@@ -22,6 +22,7 @@ public class CandidatIDIO {
         while((line=br.readLine())!=null)
         {
             String[] a=line.split(",");
+            System.out.println(a[1]);
             Universitate u=s.getUniversitate(a[0]);
             Facultate f=u.getFacultate(a[1]);
             Specializare sp=f.getSpecializare(a[2]);

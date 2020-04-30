@@ -3,7 +3,9 @@ package Servicii;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.LocalDateTime;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class Audit
 {
@@ -11,8 +13,9 @@ public class Audit
     public static void afisareQuery(String s) throws IOException
     {
         BufferedWriter br=new BufferedWriter(new FileWriter("audit.csv",true));
-        LocalDateTime t=LocalDateTime.now();
-        br.write(s+","+t);
+        SimpleDateFormat data=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date d=new Date();
+        br.write(s+","+data.format(d));
         br.newLine();
         br.close();
     }

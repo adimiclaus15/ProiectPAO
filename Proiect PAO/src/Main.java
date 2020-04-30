@@ -10,22 +10,22 @@ public class Main {
         //citim datele din csv-uri
         Service s=new Servicii.Service();
         UniversitateIO u=UniversitateIO.getInst();
-        u.citesteUniversitati("universitati.csv",s);
+        u.citesteUniversitati("data/universitati.csv",s);
 
         FacultateIO f=FacultateIO.getInst();
-        f.citesteFacultati("facultati.csv",s);
+        f.citesteFacultati("data/facultati.csv",s);
 
         SpecializareIO sp=SpecializareIO.getInst();
-        sp.citesteSpecializari("specializari.csv",s);
+        sp.citesteSpecializari("data/specializari.csv",s);
 
         CandidatIFIO r=CandidatIFIO.getInst();
-        r.citesteCandidatiIF("candidatiIF.csv",s);
+        r.citesteCandidatiIF("data/candidatiIF.csv",s);
 
         CandidatIDIO p= CandidatIDIO.getInst();
-        p.citesteCandidatiID("candidatiID.csv",s);
+        p.citesteCandidatiID("data/candidatiID.csv",s);
 
         Candidat2FacIO t=Candidat2FacIO.getInst();
-        t.citesteCandidati2Fac("candidati2FAC.csv",s);
+        t.citesteCandidati2Fac("data/candidati2FAC.csv",s);
 
         //efectuam query-uri asupra datelor si modificam datele pentru a testa clasa audit + functiile de salvare
         System.out.println("Lista universitati:");
@@ -64,11 +64,11 @@ public class Main {
         q.adaugareCandidat(c);
 
         //salvam in fisierele de unde am citit modificarile facute
-        u.salveazaUniversitati("universitati.csv",s);
-        f.salveazaFacultati("facultati.csv",s);
-        sp.salveazaSpecializari("specializari.csv",s);
-        r.salveazaCandidatiIF("candidatiIF.csv",s);
-        p.salveazaCandidatiID("candidatiID.csv",s);
-        t.salveazaCandidati2Fac("candidati2FAC.csv",s);
+        u.salveazaUniversitati("data/universitati.csv",s);
+        f.salveazaFacultati("data/facultati.csv",s);
+        sp.salveazaSpecializari("data/specializari.csv",s);
+        r.salveazaCandidatiIF("data/candidatiIF.csv",s);
+        p.salveazaCandidatiID("data/candidatiID.csv",s);
+        t.salveazaCandidati2Fac("data/candidati2FAC.csv",s);
     }
 }
